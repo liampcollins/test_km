@@ -1,0 +1,57 @@
+<div  class="col-xs-12 col-md-8 col-md-offset-2 text-uppercase medals">
+  <div class="col-xs-12 col-md-2">
+    <button type="button" class="btn" name="button" ng-click="$ctrl.showMedals=false"><img src="images/back.png" alt="back_icon">Back</button>
+  </div>
+  <img class="col-xs-12 col-md-8" src="images/olympic_rings.png" alt="olympic_rings">
+  <div class="col-xs-12 col-md-12 text-center filters">
+    <div class="">Filter by:</div>
+    <span class="col-xs-12">
+      <span>Medals</span>
+      <div class="btn-group" uib-dropdown>
+        <button id="medal-filter" type="button" class="btn" uib-dropdown-toggle>
+          {{$ctrl.medalFilter}} <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="medal-filter">
+          <li ng-repeat="option in $ctrl.medalDropdownOptions" ng-click="$ctrl.filterFunction(option, 'medal')" role="menuitem">
+            <a href="">{{option}}</a></li>
+        </ul>
+      </div>
+    </span>
+    <span class="col-xs-12">
+      <span>Gender</span>
+      <div class="btn-group" uib-dropdown>
+        <button id="gender-filter" type="button" class="btn" uib-dropdown-toggle>
+          {{$ctrl.genderFilter}} <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="gender-filter">
+          <li ng-repeat="option in $ctrl.genderDropdownOptions" ng-click="$ctrl.filterFunction(option, 'gender')" role="menuitem">
+            <a href="">{{option}}</a></li>
+        </ul>
+      </div>
+      </div>
+    </span>
+
+  <div ng-if="!$ctrl.medals.length" class="col-xs-12 col-md-8 col-md-offset-2 text-uppercase no-data">
+      NO DATA AVAILABLE :(
+  </div>
+  <div>
+  </div>
+  <table ng-if="$ctrl.medals.length" class="table table-striped table-bordered table-hover">
+    <thead>
+      <th ng-repeat="column in $ctrl.columns" ng-click="$ctrl.sort(column)" class="text-center">
+        <div ng-show="column!='Country'" class="hidden-xs">{{column}}
+          <span class="caret-container">
+            <span ng-show="$ctrl.order=='-'+column" class="caret"></span>
+            <span class="dropup"><span ng-show="$ctrl.order==column" class="caret"></span></span>
+          </span>
+        </div>
+        <div ng-show="column!='Country'" class="visible-xs" >{{column.charAt(0)}}</div>
+      </th>
+    </thead>
+    <tbody class="">
+      <tr ng-repeat="medal in $ctrl.medals | orderBy: $ctrl.order">
+        <td ng-repeat="column in $ctrl.columns" class="text-center">{{medal[column]}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

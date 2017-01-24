@@ -1,0 +1,68 @@
+<div class="rugby">
+  <div class="col-xs-12 col-md-3">
+    <button type="button" class="btn" name="button" ng-click="$ctrl.showRugby=false"><img src="images/back.png" alt="back_icon">Back</button>
+  </div>
+  <h1 class="col-xs-12 col-md-6">
+    {{$ctrl.team.details.name}}({{$ctrl.team.details.id}})
+  </h1>
+  <div class="col-xs-12 col-md-3">
+    <button type="button" class="btn" name="button" ng-click="$ctrl.pickAgain()">Pick Again<img src="images/refresh_icon.png" alt="refresh_icon"></button>
+  </div>
+  <div class="team col-xs-10 col-xs-offset-1 col-md-10 col-md-offset-1">
+    <div class="col-xs-12 col-md-12">
+      <div class="col-xs-12 col-md-4">
+        <img src="images/jersey.png" alt="jersey">
+        <label for="player">{{$ctrl.team.players.winger[0]}}</label>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <img src="images/jersey.png" alt="jersey">
+        <label for="player">{{$ctrl.team.players['full-back'][0]}}</label>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <img src="images/jersey.png" alt="jersey">
+        <label for="player">{{$ctrl.team.players.winger[1]}}</label>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6" ng-repeat="centre in $ctrl.team.players.centre">
+      <img src="images/jersey.png" alt="jersey">
+      <label for="player">{{centre}}</label>
+    </div>
+
+    <div class="col-xs-12 col-md-12">
+      <div class="col-xs-12 col-md-6">
+        <img src="images/jersey.png" alt="jersey">
+        <label for="player">{{$ctrl.team.players['out-half'][0]}}</label>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <img src="images/jersey.png" alt="jersey">
+        <label for="player">{{$ctrl.team.players['scrum-half'][0]}}</label>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-4" ng-repeat="flanker in $ctrl.team.players.flanker">
+      <img src="images/jersey.png" alt="jersey">
+      <label for="player">{{flanker}}</label>
+    </div>
+
+    <div class="col-xs-12 col-md-6" ng-repeat="lock in $ctrl.team.players.lock">
+      <img src="images/jersey.png" alt="jersey">
+      <label for="player">{{lock}}</label>
+    </div>
+
+    <div class="col-xs-12 col-md-12">
+      <div class="col-xs-12 col-md-4">
+        <img src="images/jersey.png" alt="jersey">
+        <label for="player">{{$ctrl.team.players.prop[0]}}</label>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <img src="images/jersey.png" alt="jersey">
+        <label for="player">{{$ctrl.team.players.hooker[0]}}</label>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <img src="images/jersey.png" alt="jersey">
+        <label for="player">{{$ctrl.team.players.prop[1]}}</label>
+      </div>
+    </div>
+  </div>
+</div>

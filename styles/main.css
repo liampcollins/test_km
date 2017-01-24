@@ -1,0 +1,218 @@
+body {
+  background:#353a40;
+}
+
+.home-image {
+  height: 250px;
+  width: 300px;
+  padding-top: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  text-align: center;
+  margin: 15vw auto;
+  cursor: pointer;
+}
+
+.home-image:hover {
+  background: gray;
+}
+
+.rings {
+  padding-top: 55px;
+}
+
+.home-image img {
+  max-width: 80%;
+  max-height: 100%;
+}
+
+.medals button {
+  background: white;
+  margin: 10px;
+}
+
+table{
+ height:500px;
+ display: -moz-groupbox;
+}
+
+thead th {
+  cursor: pointer;
+  font-size:16px;
+  font-weight:400;
+  color:#fff;
+  @include text-shadow(1px 1px 0px rgba(0,0,0,0.5));
+  padding:20px;
+  @include background-image(linear-gradient(#646f7f, #4a5564));
+  border-top:1px solid #858d99;
+  &:first-child {
+   @include border-top-left-radius(5px);
+  }
+  &:last-child {
+    @include border-top-right-radius(5px);
+  }
+}
+
+.caret-container {
+    width: 5px;
+    display: inline-block;
+}
+
+.dropup .caret {
+    vertical-align: super;
+}
+
+tbody tr td {
+  font-family: 'Open Sans', sans-serif;
+  font-weight:400;
+  color:#5f6062;
+  font-size:13px;
+  padding:20px 20px 20px 20px;
+  border-bottom:1px solid #e0e0e0;
+
+}
+
+tr {
+width: 100%;
+display: inline-table;
+height:35px;
+table-layout: fixed;
+}
+
+tbody{
+  overflow-y: scroll;
+  height: 458px;
+  width: calc(100% - 32px);
+  position: absolute;
+  /*padding-right: 32px*/
+}
+
+tbody tr:nth-child(2n) {
+  background:#f0f3f5;
+}
+
+tbody tr:last-child td {
+  border-bottom:none;
+  &:first-child {
+    @include border-bottom-left-radius(5px);
+  }
+  &:last-child {
+    @include border-bottom-right-radius(5px);
+  }
+}
+
+tbody:hover > tr td {
+  @include opacity(0.5);
+}
+
+tbody:hover > tr:hover td {
+  @include text-shadow(none);
+  color:#2d2d2d;
+  @include opacity(1.0);
+}
+
+.no-data {
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  padding: 50px 30px;
+}
+
+.filters {
+  color: #5f6062;
+  font-size: 20px;
+  padding: 20px;
+  background: #f0f3f5;
+}
+
+.filters .dropdown {
+  margin-right: 30px;
+}
+
+.filters span{
+  vertical-align: middle;
+}
+
+.dropdown-toggle.btn {
+  background: #353a40;
+  width: 150px;
+  color: white;
+}
+
+.dropdown-menu li{
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.dropdown-menu li a:hover{
+  background: gray;
+}
+
+.caret-up {
+  border-left: 4px solid #888;
+  border-right: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+.rugby div, .rugby h1{
+  color: #fff;
+  text-align: center;
+}
+
+.rugby button {
+    margin: 20px;
+    background: #fff;
+    color: #353a40;
+}
+
+rugby-team button img, .medals button img{
+  width: 20px;
+  margin: 0 5px;
+}
+
+.team {
+  text-align: center;
+  padding: 2% 7%;
+  border: 30px solid;
+}
+
+.team img {
+  width: 200px;
+  border-radius: 50px;
+}
+
+.team label {
+  width: 100%;
+  font-size: 20px;
+  color: white;
+}
+
+#mocha {
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .team {
+    border: none;
+    padding: 0;
+  }
+
+  .team div {
+    padding: 0;
+  }
+
+  .home-image {
+    height: 200px;
+    padding-top: 25px;
+    margin: 50px auto;
+  }
+
+  .rings {
+    padding-top: 50px;
+  }
+
+  .filters .dropdown {
+    margin-right: 0;
+  }
+}
